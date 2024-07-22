@@ -1,0 +1,36 @@
+/*VARIAVEIS*/
+:root {
+    --color-primary: #f3f3f3;
+    --color-secondary: #30b3aa;
+    --black: black;
+}
+
+/*HEADER*/
+.container__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    background-color: var(--color-secondary);
+}
+
+.header__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: center;
+}
+
+.header__nav a {
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-left: 1rem;
+    background-color: var(--black);
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+}
