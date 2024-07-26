@@ -6,31 +6,37 @@
 }
 
 /*HEADER*/
-.container__header {
+.container__form-login {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 1rem 0;
-    background-color: var(--color-secondary);
+    min-height: 100vh; /* Ou altura desejada */
 }
 
-.header__title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-.header__nav {
+/*ABA NOTICIAS*/  
+.noticies__title {
+    margin-top: 18px;
+    margin-bottom: 10px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.noticies__container {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px;
     justify-content: center;
 }
 
-.header__nav a {
-    color: var(--color-primary);
-    text-decoration: none;
-    margin-left: 1rem;
-    background-color: var(--black);
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
+/*CARROUSSEL ANIVERSARIANTES*/
+.aniversariante__item {
+    color: var(--black);
+}
+
+.aniversariante__title {
+    color: var(--black);
 }

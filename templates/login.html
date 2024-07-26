@@ -1,6 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Bem-vindo à página inicial!</h2>
-<p>Este é o conteúdo da página inicial.</p>
+<div class="container__form-login">
+    <div class="card-deck">
+        <div class="card">
+        <!--<img src="..." class="card-img-top" alt="...">-->
+        <div class="card-body">
+            <h5 class="card-title">Acesso a área de usuários</h5>
+            <form action="{{ url_for('login') }}" method="POST">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">login</label>
+                  <input type="text" class="form-control" name="username">
+                  <small id="emailHelp" class="form-text text-muted">Caso seja cadastrado no atak, utilize o login e a senha será seu cpf</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">senha</label>
+                  <input type="password" class="form-control" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </div>
+        <div class="card-footer">
+            <a href="#">Não tem conta? Solicitar Cadastro!</a>
+        </div>
+        </div>
+    </div>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert alert-danger">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+</div>
 {% endblock %}

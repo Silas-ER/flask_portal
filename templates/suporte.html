@@ -1,7 +1,62 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>Bem-vindo à página inicial!</h2>
-<p>Este é o conteúdo da página inicial.</p>
+
+<div class="container__form-login">
+    <div class="card-deck">
+        <div class="card">
+            <div class="card-body">
+            <h5 class="card-title">Requisitar Suporte</h5>
+                <form action="{{ url_for('suporte') }}" method="POST">
+                    <div class="form-row">
+
+                        <div class="form-group col-md-6">
+                            <label>Nome:</label>
+                            <input type="username" class="form-control" name="usuario">
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label>Email:</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telefone:</label>
+                        <input type="text" class="form-control" name="telefone">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Tipo de Solicitação:</label>
+                            <select id="inputState" class="form-control" name="tipo">
+                                <option selected>Escolha</option>
+                                <option>Suporte</option>
+                                <option>Solicitar Material</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputState">Setor:</label>
+                            <select id="inputState" class="form-control" name="setor">
+                                {% for setor in lista_de_setores %}
+                                    <option {% if loop.first %}selected{% endif %}>{{ setor }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="validationTextarea">Descrição do problema:</label>
+                        <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Required example textarea"  name="problema" required></textarea>
+                        <div class="invalid-feedback">
+                          Por favor escreva o problema antes de enviar!
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}
